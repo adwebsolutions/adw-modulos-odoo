@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="adw_custom_fields_sale">
+        <field name="name">ADW Campos Pedidos</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <field name="client_order_ref" position="after">
+                <field name="adw_sale_servicio" />                    
+			</field>
+        </field>
+    </record>	
+  </data>
+</openerp>

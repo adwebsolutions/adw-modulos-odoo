@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="adw_custom_fields_crm">
+        <field name="name">ADW Campos Oportunidad</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+        <field name="arch" type="xml">
+            <field name="categ_ids" position="after">
+                <field name="adw_crm_fecha_cita" />                    
+                <field name="adw_crm_oficina" />                    
+                <field name="adw_crm_tipo_empresa" />                    
+				<field name="adw_crm_servicio" />                    
+                <field name="adw_crm_motivo" />                    
+				<field name="date_closed" readonly="False" />
+				<field name="adw_crm_no_promo" />
+			</field>
+			<field name="categ_ids" position="replace" />
+			<field name="user_id" position="attributes">
+                <attribute name="string">Asesor</attribute>		
+            </field>
+			<field name="contact_name" position="attributes">
+                <attribute name="required">True</attribute>		
+            </field>
+			<field name="email_from" position="attributes">
+                <attribute name="required">True</attribute>		
+            </field>
+			<group string="Misc" position="replace" />
+			<group string="References" position="replace" />
+		    <xpath expr="//page[@string='Lead']" position='after'>
+				<page string='Detalles del Proyecto'>
+					<group>
+						<field name="adw_crm_web" />	    		
+						<field name="adw_crm_giro" />	    		
+						<field name="adw_crm_competencia" />	    		
+						<field name="adw_crm_detalles_proyecto" />
+						<field name="adw_crm_objetivo_proyecto" />
+						<field name="adw_crm_paginas_referencia" />
+						<field name="adw_crm_cantidad_paginas" />
+						<field name="adw_crm_cms" />
+						<field name="adw_crm_catalogo" />
+						<field name="adw_crm_venta" />
+						<field name="adw_crm_especiales" />
+					</group>					
+				</page>
+			</xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="adw_custom_fields_crm_leads">
+        <field name="name">ADW Campos Oportunidad</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_leads" />
+        <field name="arch" type="xml">
+            <field name="categ_ids" position="after">
+                <field name="adw_crm_tipo_empresa" />                    
+                <field name="adw_crm_servicio" />                    
+			</field>
+        </field>
+    </record>
+	<record id="adw_marketing_view_crm_opportunity_form" model="ir.ui.view">
+		<field name="name">ADW Campos Marketing</field>
+		<field name="model">crm.lead</field>
+		<field name="inherit_id" ref="marketing_crm.view_crm_opportunity_form"/>
+		<field name="arch" type="xml">
+			<field name="campaign_id" position="attributes">
+                <attribute name="required">True</attribute>		
+            </field>
+			<field name="medium_id" position="attributes">
+                <attribute name="required">True</attribute>		
+            </field>
+			<field name="source_id" position="attributes">
+                <attribute name="required">True</attribute>		
+            </field>
+		</field>
+	</record>
+	<record id="adw_view_crm_opportunity_tree" model="ir.ui.view">
+		<field name="name">ADW Oportunidad Tree</field>
+		<field name="model">crm.lead</field>
+		<field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+		<field name="arch" type="xml">
+            <field name="user_id" position="after">
+				<field name="source_id" />			
+				<field name="campaign_id" />			
+				<field name="medium_id" />			
+                <field name="adw_crm_servicio" />                    
+                <field name="adw_crm_fecha_cita" />                    
+                <field name="adw_crm_tipo_empresa" />                    
+                <field name="adw_crm_oficina" />                    
+            </field>
+			<field name="probability" position="attributes">
+                <attribute name="invisible">True</attribute>		
+            </field>
+			<field name="user_id" position="attributes">
+                <attribute name="string">Asesor</attribute>		
+            </field>
+			<field name="country_id" position="replace" />
+		</field>
+	</record>		
+  </data>
+</openerp>

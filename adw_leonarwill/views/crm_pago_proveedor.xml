@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+	
+		<record id="view_tree_todo_task" model="ir.ui.view">
+			<field name="name">Pago a proveedores</field>
+			<field name="model">crm.reserva</field>
+			<field name="arch" type="xml">
+				<form string="Nueva Reservación">
+					<header>
+						<button name="crm_crear_solicitud_de_pago" string="Solicitar Pago" type="object"
+                            help="Solicitar Pago" class="oe_highlight"/>	
+					</header>
+					<group>
+				
+							<field name="clave_resevacion"/>
+							<field name="proveedor"/>
+							<field name="hotel"/>
+							<field name="lw_crm_nombre_pasajero"/>
+							<field name="tiempo_limite"/>
+							<field name="lw_crm_quien_atendio"/>
+							<field name="lw_crm_plan_alimentos"/>
+							<field name="lw_crm_categoria"/>
+							<field name="lw_crm_anticipo"/>
+							<field name="lw_crm_forma_pago_agencia"/>
+							<field name="lw_crm_tarifa_neta"/>	
+							<field name="lw_crm_comision"/>
+							<field name="lw_crm_pago_a_proveedor"/>	
+							<field name="lw_crm_quiere_factura"/>
+							<field name="lw_crm_comentario"/>								
+					</group>
+				</form>
+			</field>
+		</record>	
+		<record id="view_tree_todo_task1" model="ir.ui.view">
+			<field name="name">Pago a proveedores</field>
+			<field name="model">crm.pago.proveedor</field>
+			<field name="arch" type="xml">
+				<form string="Nuevo Pago a Proveedor">
+					<header>
+						<button name="crm_solicitar_pago" string="Pago..." type="object"
+                            help="Solicitar Pago...." class="oe_highlight"/>	
+					</header>					
+					<group>
+					
+					<field name="clave_resevacion"/>
+					<field name="proveedor"/>
+					<field name="hotel"/>
+					<field name="lw_crm_nombre_pasajero"/>
+					<field name="tiempo_limite"/>
+					<field name="lw_crm_quien_atendio"/>
+					<field name="lw_crm_email_operador"/>	
+					<field name="lw_crm_tarifa_neta"/>	
+					<field name="lw_crm_comision"/>
+					<field name="lw_crm_pago_a_proveedor"/>
+					<field name="lw_crm_anticipo"/>
+					<field name="lw_crm_quiere_factura"/>	
+					<field name="lw_crm_comentario"/>			
+					</group>	
+				</form>
+			</field>
+		</record>		
+	</data>
+
+</openerp>

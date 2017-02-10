@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+	  <record id="view_partners_form_crm11" model="ir.ui.view">
+	      <field name="name">view.res.partner.form.crm.inherited1</field>
+	      <field name="model">res.partner</field>
+	      <field name="inherit_id" ref="base.view_partner_form"/>
+	      <field name="arch" type="xml">
+            <field name="category_id" position="after">
+				<group>
+		            <field name="lw_pasaporte" placeholder="Numero de Pasaporte" />
+		            <field name="lw_pasaporte_vence" placeholder="Fecha de Vencimiento" />
+		            <field name="visa_americana" placeholder="Tiene visa Americana" />
+		            <field name="lw_visa_vence" placeholder="Fecha Vencimiento Visa Americana" attrs="{'invisible':[('visa_americana', '=', False)]}"/>
+		            <field name="lw_entero" placeholder="Como se enteró de nosotros" />        
+				</group>
+            </field>	      
+	      </field>
+	  </record>      
+  </data>
+</openerp>

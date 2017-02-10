@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem id="menu_startdoc"
+            name="Documento de Arranque"
+            parent="base.menu_main_pm" sequence="3"/>
+        
+<!--Documento de Arranque-->
+        <!--startdoc tree view-->
+        <record id="view_adw_startdoc_tree" model="ir.ui.view">
+            <field name="name">adw.startdoc.doc.tree</field>
+            <field name="model">adw.startdoc.doc</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Documento de arranque">
+                    <field name="company_name"/>    <!--name of sprint-->
+                    <field name="project_id"/>  <!--name of project-->
+                    <field name="cms" />
+                    <field name="desing_type" />
+                    <field name="product_catalog" />
+                    <field name="online_sell" />
+                </tree>
+            </field>
+        </record>
+        
+        <!--sprint form view-->
+        <record id="view_adw_startdoc_form" model="ir.ui.view">
+            <field name="name">adw.startdoc.doc.form</field>
+            <field name="model">adw.startdoc.doc</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Documento de Arranque">
+                    <header></header>
+                    <sheet string="Documento de Arranque">
+                    <h1>
+                        <field name="company_name" placeholder="Nombre de la empresa" class="oe_inline"/>
+                    </h1>
+
+                    <group colspan="4" col="4">
+                        <field name="project_id"/>  <!--on_change="onchange_project_id(project_id)"--> 
+                        <field name="desing_type" />
+
+                        <field name="product_catalog" />
+                        <field name="online_sell" />
+
+                        <field name="payment_methods" />
+                        <field name="shippment_methods" />
+
+                        <field name="domain_name" />
+                        <field name="tobuy_domain_name" />
+
+                        <field name="cms" />
+                        <field name="hosting" />
+
+                        <field name="page_count" />
+                        <field name="chat" />
+
+                    </group>
+
+                    <group colspan="4" col="2">
+                        <field name="business_desc"/>
+                        <field name="competitive_adv"/>
+                        <field name="target_market"/>
+                        <field name="competition"/>
+                    </group>
+
+                    <group colspan="4" col="4">
+                        <field name="has_logo"/>
+                        <field name="logo"/>
+                        <field name="prefered_color"/>
+                        <field name="reference_page"/>
+                    </group>
+                    <h3> Otra información </h3>
+
+                    <group colspan="4" col="2">
+                        <field name="home_layout_desc"/>
+                        <field name="home_layout_screenshoot"/>
+                        <field name="internal_layout_desc"/>
+                        <field name="internal_layout_screenshoot"/>
+                        <field name="products_csv"/>
+                        <field name="extra_functionality"/>
+                    </group>
+
+                    <notebook colspan="5">
+                        <page string="Páginas del sitio">
+                            <field colspan="2" col="1" name="page_ids" context="{
+                                        'default_project_id': project_id,
+                                        'default_startdoc_id': id,
+                                        }">
+                                <tree>
+                                    <field name="name"/>
+                                </tree>
+                            </field> 
+                        </page>
+                    </notebook> 
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="view_adw_page_form" model="ir.ui.view">
+            <field name="name">adw.startdoc.page.form</field>
+            <field name="model">adw.startdoc.page</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Páginas del sitio">
+                    <sheet string="Contenido de la página">
+                    <h1>
+                        <field name="name" placeholder="Nombre de la página" class="oe_inline"/>
+                    </h1>
+
+                    <group col="2">
+                        <field name="keywords"/>
+                        <field name="contenido" />
+                    </group>
+                    <group col="4">
+                        <field name="doc_id" widget="many2many_binary"/>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!--user stories tree view-->
+        <record id="view_adw_page_tree" model="ir.ui.view">
+            <field name="name">adw.startdoc.page.tree</field>
+            <field name="model">adw.startdoc.page</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml" >
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+
+		<!--sprint search bar-->
+        <record id="view_stardocument_search" model="ir.ui.view">
+            <field name="name">adw.startdoc.doc.search</field>
+            <field name="model">adw.startdoc.doc</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Documento">
+                    <field name="company_name"/>
+                    <field name="project_id"/>
+                    <group string="Filter By...">
+                        <filter string="Draft" domain="[('state','=','draft')]"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Open" domain="[('state','=','open')]"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Pending" domain="[('state','=','pending')]"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Cancelled" domain="[('state','=','cancel')]"/>
+                        <separator orientation="vertical"/>
+                        <filter string="Done" domain="[('state','=','done')]"/>
+                    </group>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Project" domain="[]" context="{'group_by':'project_id'}"/>
+                    </group>
+                </search>
+            </field> 
+        </record>	
+		
+
+<!--access to all sprint tree view-->
+        <record id="action_adw_startdoc_all" model="ir.actions.act_window">
+            <field name="name">Documentos de Arranque</field>
+            <field name="res_model">adw.startdoc.doc</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree,form</field> 
+            <field name="view_id" ref="view_adw_startdoc_tree"/>
+            <field name="context">{"search_default_current": 1}</field>
+			<field name="search_view_id" ref="view_stardocument_search"/>
+            <field name="help">Documentos de arranque</field>
+        </record>		
+		
+<!--access to current sprint tree view-->
+        <record id="action_adw_startdoc_current" model="ir.actions.act_window">
+            <field name="name">Documento de arranque</field>
+            <field name="res_model">adw.startdoc.doc</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_adw_startdoc_tree"/>
+            <field name="context">{
+                'search_default_project_id': [active_id],
+                'default_project_id': active_id,
+            }</field>
+			
+            <field name="search_view_id" ref="view_stardocument_search"/>
+            <field name="help">help</field>
+        </record>
+		
+
+		
+<!--Add buttons on project form view that can connect to Start Document -->
+        <record id="edit_ps_project" model="ir.ui.view">
+            <field name="name">adw.startdoc.project.form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">				
+				<button name="attachment_tree_view" position="before">
+						<button  class="oe_inline oe_stat_button" type="action" icon="fa-files-o"
+						name="%(action_adw_startdoc_current)d">
+							
+							<div>Doc. de <br />Arranque</div>
+						</button>			
+				</button>
+				
+			</field>
+		</record>
+<!--menu for accessing to sprint-->
+
+        <menuitem
+            sequence="21"
+            action="action_adw_startdoc_all" id="menu_action_adw_startdoc_all" parent="menu_startdoc"/>
+
+
+
+    </data>
+</openerp>

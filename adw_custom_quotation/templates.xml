@@ -1,0 +1,508 @@
+<openerp>
+    <data>
+        <template id="report_quotation_inherit_demo" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//div[@class='oe_structure']/following-sibling::div[1]" position="replace"></xpath>
+            <xpath expr="//div[@class='oe_structure']" position="after">
+                <div style="page-break-after:always">
+                    <p style="margin: 30px;" />
+                    <p style="margin: 30px;" />
+                    <img class="img img-responsive" src="http://adwebsolutions.org/images/portada_adweb.jpg" style="width: 100%; margin-bottom: 40px; " />
+                    <div style="background-color:#95c2c7; color: #ffffff; padding: 5px 10px; margin-bottom: 30px; font-size: 28px;">
+                        <span> COTIZACIÓN # </span>
+                        <span t-field="o.name" />
+                        <br />
+                        <span style="font-size: 22px;" t-field="o.adw_sale_servicio" />
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-9">
+                            <h4 style="font-size: 22px; text-transform:uppercase;">
+                                <span t-field="o.partner_id.name" />
+                            </h4>
+                            <h4 style="font-size: 20px; text-transform:uppercase;">
+                                <span t-field="o.partner_id.parent_id.name" />
+                            </h4>
+                            <span t-field="o.partner_id" t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;phone&quot;, &quot;fax&quot;, &quot;email&quot;], &quot;no_marker&quot;: true}" />
+                        </div>
+                        <div class="col-xs-3">
+                            <div style="background-color:#2e74b5; color: #ffffff; padding: 15px 5px; font-weight: bold;">Fecha: <span t-field="o.date_order" t-field-options="{&quot;format&quot;: &quot;d MMMM y&quot;}" /></div>
+                            <div style="background-color:#a5d4b3; color: #ffffff; padding: 15px 5px; font-weight: bold;">Vigencia: <span t-field="o.validity_date" /></div>
+                        </div>
+                    </div>
+                </div>
+                <t t-if="o.adw_sale_servicio != 'soporte'">
+                <div style="page-break-after:always">
+					<div clas="row">
+						<h3><span t-field="o.partner_id.parent_id.name" /></h3>
+						<div><span t-field="o.adw_sale_company_info" /></div>
+						<div>
+							<t t-if="o.adw_sale_servicio == 'estandar_cms'">
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Diseño con plantilla</div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Adecuada a la identidad del cliente  Diseño responsivo que se adapta adispositivos móviles como Tablets y Smartphones y 4 imágenes profesionales para el banner principal </span></div>
+								</div>							
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Secciones de Contenido</div></div>
+									<div class="col-xs-8" style="min-height: 50px;"><span >Hasta 5 secciones de contenido administrable ej.: quienes somos/ servicios/ testimonios / contacto </span></div>
+								</div>
+															
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Panel de Control (CMS)</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Herramienta Sencilla para actualizar su sitio web sin depender de especialistas. Incluye Capacitación.</span></div>
+								</div>
+
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Hosting y Dominio</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">5GB de espacio web. Hasta 100 cuentas de e-mail
+	Dominio .com o .com.mx
+	Gratis el primer año. Renovación anual de $100.00 USD a partir del segundo año.</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Posicionamiento en Buscadores (SEO)</div></div>
+									<div class="col-xs-8"><span >Estrategias enfocadas a conseguir un buen posicionamiento orgánico con palabras claves enfocadas a Google, Bing y Yahoo! Integración con Google Analytics, plataforma para medir las visitas y obtener reportes avanzados de los detalles de los visitantes.</span></div>
+								</div>
+							</t>
+
+
+							<t t-if="o.adw_sale_servicio == 'estandar'">
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Diseño con plantilla</div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Adecuada a la identidad del cliente  Diseño responsivo que se adapta adispositivos móviles como Tablets y Smartphones y 4 imágenes profesionales para el banner principal </span></div>
+								</div>							
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Secciones de Contenido</div></div>
+									<div class="col-xs-8" style="min-height: 50px;"><span >Hasta 5 secciones de contenido administrable ej.: quienes somos/ servicios/ testimonios / contacto </span></div>
+								</div>
+
+
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Hosting y Dominio</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">5GB de espacio web. Hasta 100 cuentas de e-mail
+	Dominio .com o .com.mx
+	Gratis el primer año. Renovación anual de $100.00 USD a partir del segundo año.</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Posicionamiento en Buscadores (SEO)</div></div>
+									<div class="col-xs-8"><span >Estrategias enfocadas a conseguir un buen posicionamiento orgánico con palabras claves enfocadas a Google, Bing y Yahoo! Integración con Google Analytics, plataforma para medir las visitas y obtener reportes avanzados de los detalles de los visitantes.</span></div>
+								</div>
+							</t>
+														
+							<t t-if="o.adw_sale_servicio == 'avanzado_plantilla'">
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Diseño con plantilla</div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Adecuada a la identidad del cliente  Diseño responsivo que se adapta adispositivos móviles como Tablets y Smartphones y 4 imágenes profesionales para el banner principal </span></div>
+								</div>							
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Secciones de Contenido</div></div>
+									<div class="col-xs-8" style="min-height: 50px;"><span >Hasta 15 secciones de contenido administrable ejemplo:
+	Quienes Somos + Preguntas Frecuentes + Promociones + Términos y Condiciones + Devoluciones o Cancelaciones + Aviso de Privacidad + Ayuda + Servicios + Testimonios + Formas de Pago + Productos + Contacto</span></div>
+								</div>
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Integración con Redes Sociales</div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Enlace a sus perfiles de las Principales Redes Sociales Facebook / Twitter / Google+ / Youtube / Linkedin</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Blog</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span >Sección Dinámica y Actualizable, para permitir el intercambio con el público y generar más tráfico</span></div>
+								</div>
+															
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Panel de Control (CMS)</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Herramienta Sencilla para actualizar su sitio web sin depender de especialistas. Incluye Capacitación.</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Galería de Fotos</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span >Galería autoadministrable de fotos, productos, eventos, proyectos, etc.</span></div>
+								</div>
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Hosting y Dominio</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">5GB de espacio web. Hasta 100 cuentas de e-mail
+	Dominio .com o .com.mx
+	Gratis el primer año. Renovación anual de $100.00 USD a partir del segundo año.</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Posicionamiento en Buscadores (SEO)</div></div>
+									<div class="col-xs-8"><span >Estrategias enfocadas a conseguir un buen posicionamiento orgánico con palabras claves enfocadas a Google, Bing y Yahoo! Integración con Google Analytics, plataforma para medir las visitas y obtener reportes avanzados de los detalles de los visitantes.</span></div>
+								</div>
+							</t>
+							
+							<t t-if="o.adw_sale_servicio == 'avanzado'">
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Diseño a la medida</div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Con base a la integridad del cliente manejando una imagen fresca, innovadora y acorde a las tendencias y a la estructura recomendada para su negocio. Diseño responsivo que se adapta a dispositivos móviles como tablets y smartphones. 4 Imágenes profesionales para el banner principal.</span></div>
+								</div>							
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Secciones de Contenido</div></div>
+									<div class="col-xs-8" style="min-height: 50px;"><span >Hasta 15 secciones de contenido administrable ejemplo:
+	Quienes Somos + Preguntas Frecuentes + Promociones + Términos y Condiciones + Devoluciones o Cancelaciones + Aviso de Privacidad + Ayuda + Servicios + Testimonios + Formas de Pago + Productos + Contacto</span></div>
+								</div>
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Integración con Redes Sociales</div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Enlace a sus perfiles de las Principales Redes Sociales Facebook / Twitter / Google+ / Youtube / Linkedin</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Blog</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span >Sección Dinámica y Actualizable, para permitir el intercambio con el público y generar más tráfico</span></div>
+								</div>
+															
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Panel de Control (CMS)</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Herramienta Sencilla para actualizar su sitio web sin depender de especialistas. Incluye Capacitación.</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Galería de Fotos</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span >Galería autoadministrable de fotos, productos, eventos, proyectos, etc.</span></div>
+								</div>
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Hosting y Dominio</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">5GB de espacio web. Hasta 100 cuentas de e-mail
+	Dominio .com o .com.mx
+	Gratis el primer año. Renovación anual de $100.00 USD a partir del segundo año.</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Posicionamiento en Buscadores (SEO)</div></div>
+									<div class="col-xs-8"><span >Estrategias enfocadas a conseguir un buen posicionamiento orgánico con palabras claves enfocadas a Google, Bing y Yahoo! Integración con Google Analytics, plataforma para medir las visitas y obtener reportes avanzados de los detalles de los visitantes.</span></div>
+								</div>
+							</t>	
+							
+							<t t-if="o.adw_sale_servicio == 'tienda'">
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Diseño personalizado de la tienda online. </div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Con base a la identidad del cliente manejando una imagen fresca, innovadora y acorde a las tendencias y a la estructura recomendada para su tienda. Diseño responsivo que se adapta a dispositivos móviles como Tablets y Smartphones y 4 imágenes profesionales para el banner principal </span></div>
+								</div>							
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Secciones de Contenido</div></div>
+									<div class="col-xs-8" style="min-height: 50px;"><span >Hasta 5 secciones de contenido administrable ej.: quienes somos/ servicios/ testimonios / contacto </span></div>
+								</div>
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Integración con Redes Sociales</div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Enlace a sus perfiles de las Principales Redes Sociales Facebook / Twitter / Google+ / Youtube / Linkedin</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Blog</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span >Sección Dinámica y Actualizable, para permitir el intercambio con el público y generar más tráfico</span></div>
+								</div>
+															
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Panel de Control (CMS)</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Herramienta Sencilla para actualizar su sitio web sin depender de especialistas. Incluye Capacitación.</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Galería de Fotos</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span >Galería autoadministrable de fotos, productos, eventos, proyectos, etc.</span></div>
+								</div>
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Hosting y Dominio</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">5GB de espacio web. Hasta 100 cuentas de e-mail
+	Dominio .com o .com.mx
+	Gratis el primer año. Renovación anual de $100.00 USD a partir del segundo año.</span></div>
+								</div>
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Desarrollo del Catálogo de Productos </div></div>
+									<div class="col-xs-8"><span >"Navegación de productos agrupados por categorías. 
+Visualización de productos con, precios, descuentos, imágenes y descripción detallada 
+Actualización automática del inventario en cada pedido 
+Productos relacionados 
+Búsqueda interna de productos por palabras clave y filtros por atributos como Precio, Marca, Talla, Color, etc. 
+Botones para compartir productos en redes sociales: Facebook, Twitter, Pinterest. "</span></div>
+								</div>		
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Proceso de compra (checkout) ágil y amigable  </div></div>
+									<div class="col-xs-8"><span >"Los usuarios podrán agregar uno o varios productos a su carrito de compras y proceder a pagar. 
+Registro de datos para el envío: Nombre, Email, Teléfono, Calle, Colonia, CP, Estado y País. 
+Los clientes pueden elegir si desean crear una cuenta con usuario y contraseña o comprar como invitados. 
+Cotización de costo de envío dependiendo de su locación geográfica, peso del producto o cantidad de productos. 
+Pagos en línea con Tarjeta de Crédito o Débito usando PayPal o manual con depósito bancario. Imagen 
+Al confirmar su compra los clientes reciben de manera automática un correo personalizado confirmado los datos de su pedido e información adicional del vendedor."</span></div>
+								</div>
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Panel de administración </div></div>
+									<div class="col-xs-8"><span >"Administración de los productos del catálogo, edición de cada producto; su descripción, imágenes, precio, productos relacionados, stock, asignación de categorías y atributos. 
+Creación de productos y categorías nuevas.  
+Panel de control de pedidos. El administrador podrá ver el status de cada pedido, los detalles de la venta, confirmar el pedido o cancelarlo. 
+Sistema de alertas que notifican al administrador cada vez que hay un pedido nuevo. 
+Panel de control de clientes. El administrador podrá consultar la información almacenada de los clientes que han comprado por la tienda y asignarlos a grupos especiales, además de exportarlos a Excel. 
+Manejo de promociones y cupones de descuento que el administrador puede crear y asignar a su gusto. 
+Capacitación al usuario administrador para el uso del panel administrativo. "</span></div>
+								</div>	
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Chat en línea</div></div>
+									<div class="col-xs-8"><span >Aumente las conversiones en sus páginas a través de un chat en línea en el que podrá contactar a sus clientes al momento.  Es un chat a través de la plataforma llamada Zopim e incluye un usuario para atender los requerimientos.</span></div>
+								</div>															
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Posicionamiento en Buscadores (SEO)</div></div>
+									<div class="col-xs-8"><span >Estrategias enfocadas a conseguir un buen posicionamiento orgánico con palabras claves enfocadas a Google, Bing y Yahoo! Integración con Google Analytics, plataforma para medir las visitas y obtener reportes avanzados de los detalles de los visitantes.</span></div>
+								</div>
+							</t>	
+							
+							<t t-if="o.adw_sale_servicio == 'tienda_plantilla'">
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Diseño con Plantilla de eCommerce </div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">"Adecuada a la identidad del cliente manejando una imagen fresca, innovadora y acorde a las tendencias y a la estructura recomendada para su tienda. 
+Diseño responsivo que se adapta a dispositivos móviles como Tablets y Smartphones 
+4 imágenes profesionales para el banner principal "</span></div>
+								</div>							
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Secciones de Contenido</div></div>
+									<div class="col-xs-8" style="min-height: 50px;"><span >Hasta 5 secciones de contenido administrable ej.: quienes somos/ servicios/ testimonios / contacto </span></div>
+								</div>
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Integración con Redes Sociales</div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Enlace a sus perfiles de las Principales Redes Sociales Facebook / Twitter / Google+ / Youtube / Linkedin</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Blog</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span >Sección Dinámica y Actualizable, para permitir el intercambio con el público y generar más tráfico</span></div>
+								</div>
+															
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Panel de Control (CMS)</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Herramienta Sencilla para actualizar su sitio web sin depender de especialistas. Incluye Capacitación.</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Galería de Fotos</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span >Galería autoadministrable de fotos, productos, eventos, proyectos, etc.</span></div>
+								</div>
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Hosting y Dominio</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">5GB de espacio web. Hasta 100 cuentas de e-mail
+	Dominio .com o .com.mx
+	Gratis el primer año. Renovación anual de $100.00 USD a partir del segundo año.</span></div>
+								</div>
+
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Proceso de compra (checkout) ágil y amigable  </div></div>
+									<div class="col-xs-8"><span >"Los usuarios podrán agregar uno o varios productos a su carrito de compras y proceder a pagar. 
+Registro de datos para el envío: Nombre, Email, Teléfono, Calle, Colonia, CP, Estado y País. 
+Los clientes pueden elegir si desean crear una cuenta con usuario y contraseña o comprar como invitados. 
+Cotización de costo de envío dependiendo de su locación geográfica, peso del producto o cantidad de productos. 
+Pagos en línea con Tarjeta de Crédito o Débito usando PayPal o manual con depósito bancario. Imagen 
+Al confirmar su compra los clientes reciben de manera automática un correo personalizado confirmado los datos de su pedido e información adicional del vendedor."</span></div>
+								</div>
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Panel de administración </div></div>
+									<div class="col-xs-8"><span >"Administración de los productos del catálogo, edición de cada producto; su descripción, imágenes, precio, productos relacionados, stock, asignación de categorías y atributos. 
+Creación de productos y categorías nuevas.  
+Panel de control de pedidos. El administrador podrá ver el status de cada pedido, los detalles de la venta, confirmar el pedido o cancelarlo. 
+Sistema de alertas que notifican al administrador cada vez que hay un pedido nuevo. 
+Panel de control de clientes. El administrador podrá consultar la información almacenada de los clientes que han comprado por la tienda y asignarlos a grupos especiales, además de exportarlos a Excel. 
+Manejo de promociones y cupones de descuento que el administrador puede crear y asignar a su gusto. 
+Capacitación al usuario administrador para el uso del panel administrativo. "</span></div>
+								</div>	
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Chat en línea</div></div>
+									<div class="col-xs-8"><span >Aumente las conversiones en sus páginas a través de un chat en línea en el que podrá contactar a sus clientes al momento.  Es un chat a través de la plataforma llamada Zopim e incluye un usuario para atender los requerimientos.</span></div>
+								</div>															
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Posicionamiento en Buscadores (SEO)</div></div>
+									<div class="col-xs-8"><span >Estrategias enfocadas a conseguir un buen posicionamiento orgánico con palabras claves enfocadas a Google, Bing y Yahoo! Integración con Google Analytics, plataforma para medir las visitas y obtener reportes avanzados de los detalles de los visitantes.</span></div>
+								</div>
+							</t>		
+							
+																				
+							<t t-if="o.adw_sale_servicio == 'catalogo_plantilla'">
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Diseño con Plantilla de eCommerce </div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">"Adecuada a la identidad del cliente manejando una imagen fresca, innovadora y acorde a las tendencias y a la estructura recomendada para su tienda. 
+Diseño responsivo que se adapta a dispositivos móviles como Tablets y Smartphones 
+4 imágenes profesionales para el banner principal "</span></div>
+								</div>							
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Secciones de Contenido</div></div>
+									<div class="col-xs-8" style="min-height: 50px;"><span >Hasta 5 secciones de contenido administrable ej.: quienes somos/ servicios/ testimonios / contacto </span></div>
+								</div>
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Integración con Redes Sociales</div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Enlace a sus perfiles de las Principales Redes Sociales Facebook / Twitter / Google+ / Youtube / Linkedin</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Blog</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span >Sección Dinámica y Actualizable, para permitir el intercambio con el público y generar más tráfico</span></div>
+								</div>
+															
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Panel de Control (CMS)</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Herramienta Sencilla para actualizar su sitio web sin depender de especialistas. Incluye Capacitación.</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Galería de Fotos</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span >Galería autoadministrable de fotos, productos, eventos, proyectos, etc.</span></div>
+								</div>
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Hosting y Dominio</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">5GB de espacio web. Hasta 100 cuentas de e-mail
+	Dominio .com o .com.mx
+	Gratis el primer año. Renovación anual de $100.00 USD a partir del segundo año.</span></div>
+								</div>
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Desarrollo del Catálogo de Productos </div></div>
+									<div class="col-xs-8"><span >"Navegación de productos agrupados por categorías. 
+Visualización de productos con, precios, descuentos, imágenes y descripción detallada 
+Actualización automática del inventario en cada pedido 
+Productos relacionados 
+Búsqueda interna de productos por palabras clave y filtros por atributos como Precio, Marca, Talla, Color, etc. 
+Botones para compartir productos en redes sociales: Facebook, Twitter, Pinterest. "</span></div>
+								</div>		
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Panel de administración </div></div>
+									<div class="col-xs-8"><span >"Administración de los productos del catálogo, edición de cada producto; su descripción, imágenes, precio, productos relacionados, stock, asignación de categorías y atributos. 
+Creación de productos y categorías nuevas.  
+Panel de control de pedidos. El administrador podrá ver el status de cada pedido, los detalles de la venta, confirmar el pedido o cancelarlo. 
+Sistema de alertas que notifican al administrador cada vez que hay un pedido nuevo. 
+Panel de control de clientes. El administrador podrá consultar la información almacenada de los clientes que han comprado por la tienda y asignarlos a grupos especiales, además de exportarlos a Excel. 
+Manejo de promociones y cupones de descuento que el administrador puede crear y asignar a su gusto. 
+Capacitación al usuario administrador para el uso del panel administrativo. "</span></div>
+								</div>	
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Chat en línea</div></div>
+									<div class="col-xs-8"><span >Aumente las conversiones en sus páginas a través de un chat en línea en el que podrá contactar a sus clientes al momento.  Es un chat a través de la plataforma llamada Zopim e incluye un usuario para atender los requerimientos.</span></div>
+								</div>															
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Posicionamiento en Buscadores (SEO)</div></div>
+									<div class="col-xs-8"><span >Estrategias enfocadas a conseguir un buen posicionamiento orgánico con palabras claves enfocadas a Google, Bing y Yahoo! Integración con Google Analytics, plataforma para medir las visitas y obtener reportes avanzados de los detalles de los visitantes.</span></div>
+								</div>
+							</t>	
+							
+																				
+							<t t-if="o.adw_sale_servicio == 'catalogo'">
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Diseño a la medida</div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">"Con base a la identidad del cliente manejando una imagen fresca, innovadora y acorde a las tendencias y a la estructura recomendada para su negocio. 
+Diseño responsivo que se adapta a dispositivos móviles como Tablets y Smartphones 
+4 imágenes profesionales para el banner principal "</span></div>
+								</div>							
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Secciones de Contenido</div></div>
+									<div class="col-xs-8" style="min-height: 50px;"><span >Hasta 5 secciones de contenido administrable ej.: quienes somos/ servicios/ testimonios / contacto </span></div>
+								</div>
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Integración con Redes Sociales</div></div>
+									<div class="col-xs-8" style="background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Enlace a sus perfiles de las Principales Redes Sociales Facebook / Twitter / Google+ / Youtube / Linkedin</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Blog</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span >Sección Dinámica y Actualizable, para permitir el intercambio con el público y generar más tráfico</span></div>
+								</div>
+															
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Panel de Control (CMS)</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">Herramienta Sencilla para actualizar su sitio web sin depender de especialistas. Incluye Capacitación.</span></div>
+								</div>
+								
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 10px;">Galería de Fotos</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span >Galería autoadministrable de fotos, productos, eventos, proyectos, etc.</span></div>
+								</div>
+								
+								<div class="row" style="background-color: #cfe3e3; margin-bottom: 20px;">
+									<div class="col-xs-4" ><div style="margin-top: 10px;">Hosting y Dominio</div></div>
+									<div class="col-xs-8" style="min-height: 50px; background-color: #ffffff;"><span style="margin: 20px 0; padding: 0 20px;">5GB de espacio web. Hasta 100 cuentas de e-mail
+	Dominio .com o .com.mx
+	Gratis el primer año. Renovación anual de $100.00 USD a partir del segundo año.</span></div>
+								</div>
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Desarrollo del Catálogo de Productos </div></div>
+									<div class="col-xs-8"><span >"Navegación de productos agrupados por categorías. 
+Visualización de productos con, precios, descuentos, imágenes y descripción detallada 
+Actualización automática del inventario en cada pedido 
+Productos relacionados 
+Búsqueda interna de productos por palabras clave y filtros por atributos como Precio, Marca, Talla, Color, etc. 
+Botones para compartir productos en redes sociales: Facebook, Twitter, Pinterest. "</span></div>
+								</div>		
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Panel de administración </div></div>
+									<div class="col-xs-8"><span >"Administración de los productos del catálogo, edición de cada producto; su descripción, imágenes, precio, productos relacionados, stock, asignación de categorías y atributos. 
+Creación de productos y categorías nuevas.  
+Panel de control de pedidos. El administrador podrá ver el status de cada pedido, los detalles de la venta, confirmar el pedido o cancelarlo. 
+Sistema de alertas que notifican al administrador cada vez que hay un pedido nuevo. 
+Panel de control de clientes. El administrador podrá consultar la información almacenada de los clientes que han comprado por la tienda y asignarlos a grupos especiales, además de exportarlos a Excel. 
+Manejo de promociones y cupones de descuento que el administrador puede crear y asignar a su gusto. 
+Capacitación al usuario administrador para el uso del panel administrativo. "</span></div>
+								</div>	
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Chat en línea</div></div>
+									<div class="col-xs-8"><span >Aumente las conversiones en sus páginas a través de un chat en línea en el que podrá contactar a sus clientes al momento.  Es un chat a través de la plataforma llamada Zopim e incluye un usuario para atender los requerimientos.</span></div>
+								</div>															
+								<div class="row" style="margin-bottom: 20px;">
+									<div class="col-xs-4"><div style="margin-top: 30px;">Posicionamiento en Buscadores (SEO)</div></div>
+									<div class="col-xs-8"><span >Estrategias enfocadas a conseguir un buen posicionamiento orgánico con palabras claves enfocadas a Google, Bing y Yahoo! Integración con Google Analytics, plataforma para medir las visitas y obtener reportes avanzados de los detalles de los visitantes.</span></div>
+								</div>
+							</t>								
+						</div>
+					</div>
+				</div>
+				</t>
+            </xpath>
+            <!-- Finds the first table with as class table table-condensed and gives the ability to modify it
+		 This will replace everything withing tr (including tr)-->
+            <xpath expr="//table[@class='table table-condensed']//thead//tr" position="replace">
+                <tr style="background-color:#cfe3e3; color:#000000; font-weight: bold;">
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unit</th>
+                    <th>Desc. %</th>
+                    <th class="text-right">Price</th>
+                </tr>
+            </xpath>
+            <!-- This will search for the 4'th td element (in the tbody with class sale_tbody) and will remove it. -->
+            <!-- Important: if you would start with element 2, then do 3 and then do 4 you will see strange behaviour.
+	    	The first statement would remove element 2 making all other elements move in numbering too. -->
+            <xpath expr="//tbody[@class='sale_tbody']//tr//td[2]" position="replace"></xpath>
+            <xpath expr="//table[@class='table table-condensed']/following-sibling::div[1]//table[1]//tr[2]" position="replace"></xpath>
+            <xpath expr="//table[@class='table table-condensed']/following-sibling::div[1]//table[1]//tr[1]" position="replace"></xpath>
+            <xpath expr="//table[@class='table table-condensed']/following-sibling::div[1]/following-sibling::p[2]" position="after">
+                <div class="row" style="margin-top: 40px;">
+                    <div class="col-xs-6">
+                        <div class="row">
+                            <div class="col-xs-6" style="font-size:16px;">
+                                <strong>Datos bancarios</strong>
+                            </div>
+                            <div class="col-xs-6">
+                                <img class="img img-responsive" src="http://adwebsolutions.org/images/banorte-ixe.jpg" style="margin: 5px; " />
+                            </div>
+                        </div>
+<strong>BANCO:</strong> BANORTE<br />
+<strong>No Cuenta:</strong> 0817377454<br />
+<strong>Clabe:</strong> 072320008173774546<br /><br />
+
+<strong>Razón Social:</strong> ADWEB SOLUTIONS MÉXICO SC<br />
+<strong>RFC:</strong> ASM-120217-PN8 <br />
+<strong>DOMICILIO Fiscal:</strong>
+Luigi Pirandello #5330, Col. Vallarta Universidad, CP. 45110. Zapopan. Jal
+</div>
+                    <div class="col-xs-6">
+                        <div style=" font-weight: bold;">Cliente</div>
+Acepto la propuesta anterior y he leído y entendido los Términos y Condiciones de Servicio proporcionado por Adweb, y estoy de acuerdo con ellos. Incluyo con esta aceptación, el depósito del 60 % para iniciar el proyecto
+</div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</openerp>

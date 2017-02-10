@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+	
+		<record id="view_form_todo_task" model="ir.ui.view">
+			<field name="name">Mantenimiento Formulario</field>
+			<field name="model">adw.mtto</field>
+			<field name="arch" type="xml">
+				<form string="To-do Task">
+					<header>
+						<button name="do_toggle_inprocess" type="object" string="En proceso" class="oe_highlight" />
+						<button name="do_toggle_done" type="object" string="Marcar como realizado" class="oe_highlight" />
+					</header>
+					<sheet>
+						<group name="group_top">
+						<group name="group_left">
+							<field name="name"/>
+							<field name="client_id"/>
+							<field name="product_id"/>
+						</group>
+						<group name="group_right">
+							<field name="is_done"/>
+							<field name="active"/>
+							<field name="fecha"/>
+							<field name="fecha_ejecucion"/>
+						</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>	
+		<record id="view_tree_todo_task" model="ir.ui.view">
+			<field name="name">Tareas de matenimientos</field>
+			<field name="model">adw.mtto</field>
+			<field name="arch" type="xml">
+				<tree colors="gray:is_done==True">
+					<field name="name"/>
+					<field name="is_done"/>
+				</tree>
+			</field>
+		</record>		
+        <!-- Top menu item -->
+        <menuitem name="Mantenimiento"
+            id="menu_mtto_root"
+            sequence="80"/>
+            	
+		<!-- Action to open To-do Task list -->
+		<act_window id="action_mtto"
+			name="Gestión de Mantenimiento"
+			res_model="adw.mtto"
+			view_mode="tree,form" />
+		<!-- Menu item to open To-do Task list -->
+		<menuitem id="menu_adw_mtto"
+			name="Gestion Mantenimiento"
+			parent="menu_mtto_root"
+			sequence="20"
+			action="action_mtto" />
+		<menuitem id="gestion_adw_mtto"
+			name="Gestion Mantenimiento"
+			parent="menu_adw_mtto"
+			sequence="20"
+			action="action_mtto" />	
+
+	</data>
+
+</openerp>

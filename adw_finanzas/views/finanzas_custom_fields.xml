@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="custom_fields_account_invoice">
+        <field name="name">account.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="arch" type="xml">
+            <field name="account_id" position="after">
+                <field name="adw_fin_oficina" />           
+                <field name="adw_fin_departamento" />           
+                <field name="adw_fin_factura" />           
+            </field>
+		</field>
+    </record>
+    <record model="ir.ui.view" id="custom_fields_account_invoice_view">
+        <field name="name">account.invoice.tree</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree" />
+        <field name="arch" type="xml">
+            <field name="state" position="after">
+                <field name="adw_fin_departamento" />
+                <field name="adw_fin_factura" string="Factura Fiscal" />            
+            </field>
+            <field name="origin"  position="replace" />
+        </field>
+    </record>          
+  </data>
+</openerp>

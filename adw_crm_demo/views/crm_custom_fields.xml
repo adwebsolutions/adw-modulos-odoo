@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="adw_custom_fields_crm">
+        <field name="name">ADW CRM Personalizacion</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+        <field name="arch" type="xml">
+            <field name="categ_ids" position="after">               
+				<field name="date_closed" readonly="False" />
+			</field>
+        </field>
+    </record>		
+  </data>
+</openerp>

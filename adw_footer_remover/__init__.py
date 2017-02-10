@@ -1,0 +1,3 @@
+import footer_remover
+import footer_remover_mail
+import footer_remover_mail_portal

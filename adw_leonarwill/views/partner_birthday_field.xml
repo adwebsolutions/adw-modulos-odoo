@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+	  <record id="view_partners_form_crm12" model="ir.ui.view">
+	      <field name="name">view.res.partner.form.crm.inherited1</field>
+	      <field name="model">res.partner</field>
+	      <field name="inherit_id" ref="base.view_partner_form"/>
+	      <field name="arch" type="xml">
+            <field name="category_id" position="before">
+<label for="lw_fecha_nac" string="Fecha de Nacimiento" />
+                <field name="lw_fecha_nac" placeholder="Fecha de Nacimiento" />          
+            </field>	      
+	      </field>
+	  </record>      
+  </data>
+</openerp>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="mytheme assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/adw_theme/static/src/css/adw_theme.css"/>
+                <script type="text/javascript" src="/adw_theme/static/src/js/adw_theme.js"></script>
+            </xpath>
+        </template>
+        <template id="adw_theme.login_layout" inherit_id="web.login_layout" name="ADWEB Login">
+            <xpath expr="//div[@class='oe_single_form_footer']" position="replace">
+                <div class="oe_single_form_footer">Usuario y Contraseña del CRM</div>
+            </xpath>
+        </template>
+        <template id="adw_theme.database_select" inherit_id="web.database_select" name="Esconder base de datos">
+            <xpath expr="//div[@class='form-group field-db']" position="replace">
+                
+            </xpath>
+        </template>
+    </data>
+</openerp>

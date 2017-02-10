@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="taskimport_projects_project">
+			<field name="name">taskimport.project.form</field>
+			<field name="model">project.project</field>
+			<field name="inherit_id" ref="project.edit_project" />
+			<field name="arch" type="xml">
+				<xpath expr="//form/header" position="replace">
+					<header>
+						<button name="set_open" string="Re-open project" type="object" states="pending" class="oe_highlight" groups="base.group_user"/>
+						<button name="set_done" string="Close Project" type="object" states="open,pending" groups="base.group_user"/>
+						<button name="set_open" string="Re-open project" type="object" states="cancelled,close" groups="base.group_user"/>
+						<button name="set_pending" string="Pending" type="object" states="open" groups="base.group_user"/>
+						<button name="set_template" string="Set as Template" type="object" states="open" groups="base.group_user"/>
+						<button string="New Project Based on Template" name="duplicate_template"  type="object" states="template" context="{'parent_id':parent_id}" class="oe_highlight" groups="base.group_user"/>
+						<button name="reset_project" string="Reset as Project" type="object" states="template" class="oe_highlight" groups="base.group_user"/>
+						<button name="set_cancel" string="Cancel Project" type="object" states="open,pending" groups="base.group_user"/>
+						<button name="import_task" string="Import Tareas" type="object" class="oe_highlight" groups="base.group_user" />
+						<field name="state" widget="statusbar" statusbar_visible="open,close" statusbar_colors='{"pending":"blue"}' readonly="1"/>
+					</header>
+				</xpath>
+				<field name="parent_id" position="after">
+					<field name="data_file" />
+				</field>				
+			</field>
+		</record>		
+	</data>
+</openerp>

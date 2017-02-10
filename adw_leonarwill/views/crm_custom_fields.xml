@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record model="ir.ui.view" id="adw_lw_custom_fields_crm">
+        <field name="name">ADW Campos Oportunidad en LW</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/group[1]" position="after">
+            	<h2>Detalles del Viaje</h2>
+            	<hr />
+				<group>
+				<field name="lw_crm_origen" />
+                <field name="lw_crm_destino" />
+                <field name="lw_crm_motivoviaje" />
+                </group>
+                <group>
+	                <group>
+	                <field name="lw_crm_fsalida" />
+	                <field name="lw_crm_fregreso" />
+	                <field name="lw_crm_nPersonas" />
+	                <field name="lw_crm_nNinnos" />
+	                <field name="lw_crm_rango_edad" />
+	                <field name="lw_crm_forma_pago"/>   
+	                </group>
+	                <group>               
+	                <field name="lw_crm_quiere_factura" />
+	                <field name="lw_crm_rfc"  attrs="{'invisible':[('lw_crm_quiere_factura', '=', False)]}"/>
+	                <field name="lw_crm_concepto"  attrs="{'invisible':[('lw_crm_quiere_factura', '=', False)]}"/>
+	                <field name="lw_crm_rsocial"  attrs="{'invisible':[('lw_crm_quiere_factura', '=', False)]}"/>
+	                <field name="lw_crm_subtotal"  attrs="{'invisible':[('lw_crm_quiere_factura', '=', False)]}"/>
+	                <field name="lw_crm_iva"  attrs="{'invisible':[('lw_crm_quiere_factura', '=', False)]}"/>
+	                <field name="lw_crm_total"  attrs="{'invisible':[('lw_crm_quiere_factura', '=', False)]}"/>
+	                <field name="lw_crm_domicilio"  attrs="{'invisible':[('lw_crm_quiere_factura', '=', False)]}"/>
+	                <field name="lw_crm_nocuenta"  attrs="{'invisible':[('lw_crm_quiere_factura', '=', False)]}"/>
+	                </group>
+                </group>
+            </xpath>  
+            <br />
+			<xpath expr="/form/sheet/group[3]" position="after">
+				<hr />
+				<h2>Solicitudes de pago</h2>
+				<hr />
+				<field name="lw_crm_pago_proveedor" widget="one2many">
+				   <tree>
+				      <field name="clave_resevacion"/>
+				      <field name="proveedor"/>
+				      <field name="hotel"/>
+				      <field name="lw_crm_tarifa_neta"/>				      
+				      <field name="lw_crm_comision"/>
+				      <field name="lw_crm_pago_a_proveedor"/>				      
+				   </tree>
+				</field> 
+			</xpath>
+			<br />
+			<xpath expr="/form/sheet/group[3]" position="after">
+				<hr />
+				<h2>Reservaciones</h2>
+				<hr />
+				<field name="lw_crm_reserva" widget="one2many">
+				   <tree> 
+				      <field name="clave_resevacion"/>
+				      <field name="proveedor"/>
+				      <field name="hotel"/>
+				      <field name="lw_crm_tarifa_neta"/>				      
+				      <field name="lw_crm_comision"/>
+				      <field name="lw_crm_pago_a_proveedor"/>				      
+				   </tree>
+				</field>
+			</xpath>			
+
+			<field name="user_id" position="attributes">
+                <attribute name="string">Asesor</attribute>		
+            </field>
+        </field>
+    </record>	
+  </data>
+</openerp>
