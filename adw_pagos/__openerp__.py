@@ -15,5 +15,5 @@ Modulo de ADWEB Pagos
     'data': ['views/pagos_custom_fields.xml'],
     'installable': True,
     'auto_install':False,
-    'active':True,
+    'active':False,
 }
