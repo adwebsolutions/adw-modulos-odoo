@@ -10,6 +10,7 @@
                 <field name="adw_fin_oficina" />           
                 <field name="adw_fin_departamento" />           
                 <field name="adw_fin_factura" />           
+                <field name="adw_fin_standby" string="Proyecto en StandBy" />            
             </field>
 		</field>
     </record>
