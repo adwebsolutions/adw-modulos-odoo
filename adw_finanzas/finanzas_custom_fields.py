@@ -19,6 +19,7 @@ class finanzas_custom_fields(osv.osv):
     																					('soporte','Soporte')], 
     																						'Departamento'),
     'adw_fin_factura': fields.char('Factura Fiscal'),    																						
+    'adw_fin_standby': fields.boolean('Proyecto StandBy'),    																						
     'adw_fin_oficina': fields.selection([('matriz','Matriz'),
     																					('providencia','Providencia'),
     																					('chapultepec','Chapultepec'),

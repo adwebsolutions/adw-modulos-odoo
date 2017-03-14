@@ -21,6 +21,7 @@
             <field name="state" position="after">
                 <field name="adw_fin_departamento" />
                 <field name="adw_fin_factura" string="Factura Fiscal" />            
+                <field name="adw_fin_standby" string="Proyecto en StandBy" />            
             </field>
             <field name="origin"  position="replace" />
         </field>
