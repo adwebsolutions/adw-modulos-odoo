@@ -28,6 +28,7 @@ class crm_custom_fields(osv.osv):
     											('mantenimiento','Mantenimiento'),
     											('basico','Básico'),
     											('emarketing','eMarketing'), 
+    											('cursos','Cursos y Capacitaciones'), 
     											('hosting','Hosting')), 
     											'Servicio', required=True),
 												
